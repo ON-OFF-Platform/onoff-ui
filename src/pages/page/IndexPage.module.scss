@@ -1,0 +1,22 @@
+.img {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 50px auto;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .btnText {
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-green);
+    }
+  }
+}
