@@ -101,6 +101,7 @@ const LoginPage: React.FC = () => {
         isOpen={isOpen}
         onClose={closeModal}
         onConfirm={handleConfirm}
+        width={30}
       >
         <ModalContent
           title={title}
