@@ -10,6 +10,8 @@ interface ModalProps {
   onConfirm?: () => void;
   onClose: () => void;
   children: ReactNode;
+  width?: number;
+  textAlign?: 'left' | 'center' | 'right';
 }
 
 const Modal: React.FC<ModalProps> = ({ 
@@ -19,7 +21,9 @@ const Modal: React.FC<ModalProps> = ({
   btn = '확인',
   onClose, 
   onConfirm, 
-  children
+  children,
+  width = 80,
+  textAlign = 'left'
 }) => {
   if (!isOpen) return null;
 
@@ -31,9 +35,9 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <div className={styles.bg} onClick={handleBackgroundClick}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div style={{ width: `${width}%` }} className={styles.modal} onClick={(e) => e.stopPropagation()}>
         
-        <div className={styles.content}>{children}</div>
+        <div style={{ textAlign: `${textAlign}`}} className={styles.content}>{children}</div>
 
         <div className={styles.btn}>
           <Button onClick={onConfirm}>{btn}</Button>
